@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Redirecionamento</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://media.discordapp.net/attachments/1278718712236736685/1278718726325272586/banner_cloud.png?ex=66d1d31d&is=66d0819d&hm=2dc9fa1e8041c1e9ce90a073d7af5000e3bfe55901d3469976db449c91bed9e9&=&format=webp&quality=lossless&width=574&height=323');
+            background-size: cover;
+            background-position: center;
+            perspective: 1000px; /* Adiciona perspectiva para efeito 3D */
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Borda branca semi-transparente */
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            color: #fff; /* Cor branca para o texto dentro do quadrado */
+            position: relative;
+            text-align: center;
+            transform: translateZ(-100px); /* Move o contêiner para trás no eixo Z */
+            backdrop-filter: blur(5px); /* Adiciona desfoque ao fundo */
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        h1, p {
+            color: #fff; /* Cor branca para o texto */
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            color: #fff;
+            background-color: #660066; /* Cor roxa mais escura para os botões */
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #440044; /* Cor roxa ainda mais escura ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://media.discordapp.net/attachments/1278718712236736685/1278721839081979948/CLOUD_LOGO.png?ex=66d1d603&is=66d08483&hm=186971bd4aa71f4bcba1c4397b7a2cfb43592ea8be740e55cbfb048b9a745f3c&=&format=webp&quality=lossless&width=359&height=359" alt="Logo da Cloud">
+        <h1>Autenticação Completa!</h1>
+        <p>Obrigado por autenticar. Você pode fechar esta janela agora.</p>
+        <div class="buttons">
+            <a href="https://discord.gg/G4HY9D5tVW" class="button" target="_blank">Acessar Discord</a>
+            <a href="https://chat.whatsapp.com/DvZHPxYlp530SzL1sxxAjP" class="button" target="_blank">Entrar no WhatsApp</a>
+        </div>
+    </div>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const code = urlParams.get('code'); // Código de autorização do OAuth2
+        if (code) {
+            console.log('Código de Autorização recebido:', code);
+            // Aqui você pode enviar o código para o backend para processá-lo
+        }
+    </script>
+</body>
+</html>
